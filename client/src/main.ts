@@ -106,3 +106,9 @@ const handleFormSubmit = (e: any) => {
 
 // Listen for when the form is submitted
 tipForm.addEventListener('submit', handleFormSubmit);
+
+setInterval(() => {
+  tipsContainer?.replaceChildren();
+
+  getTips().then((data) => data.forEach((tip: any) => createCard(tip)));
+}, 1500);
